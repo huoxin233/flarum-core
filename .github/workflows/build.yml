@@ -1,4 +1,4 @@
-name: Build assets and Sync to GitLab
+name: Build assets
 
 on:
   push:
@@ -13,4 +13,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: flarum/action-build@master
         with:
+          package_manager: yarn
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
